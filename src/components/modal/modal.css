@@ -1,0 +1,54 @@
+.modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+
+    width: 520px;
+    min-height: 420px;
+    background-color: #eee;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    position: relative;
+}
+
+.deleteBtn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    color: red;
+    font-size: 16px;
+    padding: 12px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.displayFiles ul {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
