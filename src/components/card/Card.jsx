@@ -12,9 +12,11 @@ import { MdAccountBalance } from "react-icons/md";
 
 const Card = ({ cardInfo }) => {
     const [open, setOpen] = useState(false);
+    const [selectedCard, setSelectedCard] = useState(null);
+    const [fileNum, setFileNum] = useState(cardInfo?.totalFileNumber || 0);
 
     const handleModal = (info) => {
-        console.log('card info: ', info);
+        setSelectedCard(info);
         setOpen(!open);
     }
 
@@ -55,7 +57,7 @@ const Card = ({ cardInfo }) => {
                         className='icon'
                         onClick={() => handleModal(cardInfo)}
                     />
-                    <p className="countFile">{cardInfo?.totalFileNumber}</p>
+                    <p className="countFile">{fileNum}</p>
                 </div>
                 <div className="item">
                     <BsCalendarDateFill className='icon' />
@@ -66,7 +68,11 @@ const Card = ({ cardInfo }) => {
 
             {
                 open && (
-                    <Modal setOpen={setOpen} />
+                    <Modal
+                        selectedCard={selectedCard}
+                        setFileNum={setFileNum}
+                        setOpen={setOpen}
+                    />
                 )
             }
         </div>

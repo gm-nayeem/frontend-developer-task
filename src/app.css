@@ -44,11 +44,12 @@ body,
     height: calc(100dvh - 5.4rem);
     padding: 1rem 0;
     padding-bottom: .7rem;
-
     display: flex;
     gap: 12px;
+
     overflow-x: auto;
     overflow-y: hidden;
+    scroll-snap-type: inline mandatory;
 }
 
 /* .cards-wrapper::-webkit-scrollbar {
