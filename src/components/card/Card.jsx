@@ -12,13 +12,7 @@ import { MdAccountBalance } from "react-icons/md";
 
 const Card = ({ cardInfo }) => {
     const [open, setOpen] = useState(false);
-    const [selectedCard, setSelectedCard] = useState(null);
     const [fileNum, setFileNum] = useState(cardInfo?.totalFileNumber || 0);
-
-    const handleModal = (info) => {
-        setSelectedCard(info);
-        setOpen(!open);
-    }
 
     return (
         <div className="card">
@@ -55,7 +49,7 @@ const Card = ({ cardInfo }) => {
                 <div className="item">
                     <FaLink
                         className='icon'
-                        onClick={() => handleModal(cardInfo)}
+                        onClick={() => setOpen(!open)}
                     />
                     <p className="countFile">{fileNum}</p>
                 </div>
@@ -69,7 +63,6 @@ const Card = ({ cardInfo }) => {
             {
                 open && (
                     <Modal
-                        selectedCard={selectedCard}
                         setFileNum={setFileNum}
                         setOpen={setOpen}
                     />

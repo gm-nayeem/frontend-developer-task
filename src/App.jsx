@@ -1,14 +1,8 @@
 import './app.css';
 import Cards from './components/cards/Cards';
-import { useCardInfo } from './hooks/useCardInfo';
-import Loading from './components/loading/Loading';
+import { taskData } from './utils/data';
 
 const App = () => {
-  const { loading, data } = useCardInfo();
-
-  if (loading) {
-    return <Loading />
-  }
 
   return (
     <div className='app'>
@@ -16,8 +10,8 @@ const App = () => {
         <div className="border-wrapper">
           <div className="cards-wrapper">
             {
-              data?.length > 0 ? (
-                data.map(item => (
+              taskData?.length > 0 ? (
+                taskData.map(item => (
                   <Cards
                     item={item}
                     key={item.id}
